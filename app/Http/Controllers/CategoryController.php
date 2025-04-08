@@ -61,10 +61,16 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update($request, $id)
+    public function update($request,$id)
     {
         //
+        $cat_id = category::findOrFail($id);
+        $cat_id ->name = $request->name;
+        $cat_id ->update();
+
+        return redirect()->route('admin.cat');
     }
+    
 
     /**
      * Remove the specified resource from storage.
