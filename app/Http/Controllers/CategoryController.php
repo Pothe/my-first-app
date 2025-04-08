@@ -53,8 +53,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
-            $single_category = category::findOrFail($id);
-        return view('admin.category.edit',compact('single_category'));
+            $single_categor = category::findOrFail($id);
+        return view('admin.category.edit',compact('single_categor'));
      
     }
 
