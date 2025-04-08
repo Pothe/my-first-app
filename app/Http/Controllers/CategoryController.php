@@ -42,7 +42,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(category $category)
+    public function show($id)
     {
         //
     }
@@ -66,9 +66,10 @@ class CategoryController extends Controller
         //
         $cat_id = category::findOrFail($id);
         $cat_id ->name = $request->name;
-        $cat_id ->update();
+        dd($cat_id);
+        // $cat_id ->update();
 
-        return redirect()->route('admin.cat');
+        // return redirect()->route('admin.cat');
     }
     
 
