@@ -74,7 +74,7 @@ class CategoryController extends Controller
          $cat_id-> name = $request -> name;
       
          $cat_id->update();
-         return redirect()->route('admin.cat');
+         return redirect()->route('admin.cat')->with("success","Data is updated successfully!");
 
      }
         /**
