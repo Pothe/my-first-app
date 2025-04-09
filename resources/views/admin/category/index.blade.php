@@ -44,9 +44,9 @@
     </div>
 @endif --}}
 
-@if(session('success'))
+
   @include('components.alert')
-@endif
+
     <div class="row">
       <div class="d-flex justify-content-between mb-2">
         <h3>Category List</h3>
