@@ -58,7 +58,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
-            $single_category = category::findOrFail($id);
+        $single_category = category::findOrFail($id);
         return view('admin.category.edit',compact('single_category'));
      
     }
@@ -71,8 +71,7 @@ class CategoryController extends Controller
      {
          //
          $cat_id = category::findOrFail($id);
-         $cat_id-> name = $request -> name;
-      
+         $cat_id-> name = $request -> name;      
          $cat_id->update();
          return redirect()->route('admin.cat')->with("success","Data is updated successfully!");
 
