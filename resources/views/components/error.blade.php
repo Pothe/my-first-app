@@ -13,7 +13,7 @@
         }
     });
     Toast.fire({
-        icon: "success",
+        icon: "error",
         title: "{{ session('error') }}"
     });
 </script>
