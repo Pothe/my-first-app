@@ -22,7 +22,7 @@
           @csrf
           <div class="mb-3">
             <label for="tag" class="form-label">Category</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="tag" name="name" />
+            <input type="text" class="form-control  @error('name') is-invalid @enderror" id="tag" name="name" />
            @error('name')
           <div class="invalid-feedback">
            {{ $message }}
@@ -46,6 +46,7 @@
 
 
   @include('components.alert')
+  @include('components.error')
 
     <div class="row">
       <div class="d-flex justify-content-between mb-2">
