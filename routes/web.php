@@ -19,3 +19,4 @@ Route::POST('/admin/store', [CategoryController::class,'store'])->name('admin.ca
 Route::get('/admin/edit/{id}', [CategoryController::class,'edit'])->name('admin.cat.edit');
 // get update 
 Route::PUT('/admin/update/{id}', [CategoryController::class,'update'])->name('admin.cat.update');
+Route::DELETE('/admin/delete/{id}', [CategoryController::class,'destroy'])->name('admin.cat.destroy');
