@@ -39,8 +39,14 @@
                     class="btn btn-primary btn-sm"
                     href="{{ route('admin.cat.edit',['id' => $item->id ]) }}"
                     role="button"
-                    >Edit</a
-                  >
+                    ><i class="bi bi-pencil-square"></i></a
+                  > ||
+                  <a
+                  class="btn btn-danger btn-sm"
+                  href="{{ route('admin.cat.edit',['id' => $item->id ]) }}"
+                  role="button"
+                  ><i class="bi bi-trash3-fill \"></i></a
+                >
                 </td>
               </tr>
               @endforeach
