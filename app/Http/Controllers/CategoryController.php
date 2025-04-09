@@ -74,6 +74,7 @@ class CategoryController extends Controller
 
      public function update( Request $request, $id)
      {
+       
          //
          $cat_id = category::findOrFail($id);
          $cat_id-> name = $request -> name;      
