@@ -5,6 +5,38 @@
 @section('content')
 
 <div class="container my-5">
+
+  <h2>User List</h2>
+
+  <!-- Button to open modal -->
+  <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+      + Add New User
+  </button>
+
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <form method="POST" action="{{ route('admin.cat.store')}}">
+          @csrf
+          <div class="mb-3">
+            <label for="tag" class="form-label">Category</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="tag" name="name" />
+           @error('name')
+          <div class="invalid-feedback">
+           {{ $message }}
+          </div>
+               
+           @enderror
+          </div>
+          <button type="submit" class="btn btn-primary">save</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
   {{-- @if (session('success'))
        <div class="alert alert-primary alert-dismissible fade show" role="alert">
       {{ session('success') }}
