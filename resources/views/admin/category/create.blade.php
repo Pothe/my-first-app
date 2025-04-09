@@ -3,6 +3,7 @@
     
 @section('content')
 <div class="container my-5">
+  @include('components.error')
     <div class="row">
       <div class="d-flex justify-content-between mb-2">
         <h3>Create Category</h3>
