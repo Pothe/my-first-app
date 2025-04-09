@@ -31,7 +31,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        $name= $request->input('name');
+        if (category::where('name', $name)->exists()) {
+            return redirect()->route('admin.cat.create')->with('error',$name.'is already registered!');
+        }
         $validated = $request->validate([
             'name' => 'required',
         
