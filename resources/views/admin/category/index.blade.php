@@ -9,7 +9,7 @@
       <div class="d-flex justify-content-between mb-2">
         <h3>Category List</h3>
         <a class="btn btn-success" href="{{route('admin.cat.create')}}" role="button"
-          >Create</a
+          ><i class="bi bi-plus-circle-fill"></i></a
         >
       </div>
       <!-- Blog entries-->
