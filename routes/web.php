@@ -23,4 +23,4 @@ Route::get('/admin/edit/{id}', [CategoryController::class,'edit'])->name('admin.
 Route::PUT('/admin/update/{id}', [CategoryController::class,'update'])->name('admin.cat.update');
 Route::DELETE('/admin/delete/{id}', [CategoryController::class,'destroy'])->name('admin.cat.destroy');
 // tags routes
-Route::get('/admin/tags',[TagsController::class, 'index'])->name('admin.tags');
+Route::get('/admin/tags', [TagsController::class, 'index'])->name('admin.tags');
