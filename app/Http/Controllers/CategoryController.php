@@ -30,11 +30,13 @@ class CategoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
+        // check data if exit 
         $name= $request->input('name');
         if (category::where('name', $name)->exists()) {
-            return redirect()->route('admin.cat.create')->with('error',$name.'is already registered!');
+            return redirect()->route('admin.cat.create')->with('error',$name." ".'is already registered!');
         }
+        // validation for input
         $validated = $request->validate([
             'name' => 'required',
         
