@@ -40,7 +40,7 @@ class CategoryController extends Controller
         $category = new category;
         $category -> name = $request->name;  
         $category ->save();
-        return redirect()->route('admin.cat');
+        return redirect()->route('admin.cat')->with("success","success! Data is saved ready");
 
     }
 
@@ -80,8 +80,11 @@ class CategoryController extends Controller
         /**
      * Remove the specified resource from storage.
      */
-    public function destroy(category $category)
-    {
+    public function destroy($id)    {
         //
+        $cat_id = category::findOrFail($id);    
+        $cat_id->delete();
+        return redirect()->route('admin.cat')->with("success","You have deleted data success!");
+
     }
 }
