@@ -74,6 +74,11 @@ class CategoryController extends Controller
 
      public function update( Request $request, $id)
      {
+
+        $name= $request->input('name');
+        if (category::where('name', $name)->exists()) {
+            return redirect()->route('admin.cat')->with('error',$name." ".'is already registered!');
+        }
        
          //
          $cat_id = category::findOrFail($id);
