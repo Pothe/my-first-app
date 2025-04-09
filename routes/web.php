@@ -1,6 +1,8 @@
 <?php
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagsController;
+use Illuminate\Support\Facades\Route;
+
 
 route::get('/', function(){
     return view('index');
@@ -20,3 +22,5 @@ Route::get('/admin/edit/{id}', [CategoryController::class,'edit'])->name('admin.
 // get update 
 Route::PUT('/admin/update/{id}', [CategoryController::class,'update'])->name('admin.cat.update');
 Route::DELETE('/admin/delete/{id}', [CategoryController::class,'destroy'])->name('admin.cat.destroy');
+// tags routes
+Route::get('/admin/tags',[TagsController::class, 'index'])->name('admin.tags');
