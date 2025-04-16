@@ -13,7 +13,8 @@ class TagsController extends Controller
     public function index()
     {
        //
-       return view('admin.tags.index');
+       $tags =tags::all();
+       return view('admin.tags.index', compact('tags'));
 
         
     }
@@ -33,10 +34,14 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'name' => 'required',
         
+        ]);
          $tag = new tags;
          $tag ->name = $request->name;
          $tag ->save();
+         return redirect()->route('admin.tags');
     }
 
     /**
@@ -50,9 +55,11 @@ class TagsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(tags $tags)
+    public function edit($id)
     {
-        //
+      
+        dd($id);
+
     }
 
     /**
