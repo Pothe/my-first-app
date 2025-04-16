@@ -11,11 +11,12 @@
       <!-- Blog entries-->
       <div class="col-lg-12">
         <div class="card p-3">
-          <form method="POST"​ action="#">  
-           
+          <form method="POST"​ action="{{ route('admin.tag.update',$tag->id) }}">  
+           @csrf
+           @method('PUT')
             <div class="mb-3">
               <label for="tag" class="form-label">Category</label>
-              <input type="text" class="form-control" id="name" name="name" value=""/>
+              <input type="text" class="form-control" id="name" name="name" value="{{ $tag->name }}"/>
             </div>
             <button type="submit" class="btn btn-primary">update</button>
           </form>
