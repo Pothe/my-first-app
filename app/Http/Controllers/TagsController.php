@@ -58,16 +58,22 @@ class TagsController extends Controller
     public function edit($id)
     {
       
-        dd($id);
+        $tag = tags::FindOrFail($id);
+        return view('admin.tags.edit',compact('tag'));
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, tags $tags)
+    public function update(Request $request, $id)
     {
         //
+        $tag = tags::FindOrFail($id);
+        $tag->name = $request->name;
+        $tag->update();
+        return redirect()->route('admin.tags')->with("success","Data is updated succesfully!");
+
     }
 
     /**
