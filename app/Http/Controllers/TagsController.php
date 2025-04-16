@@ -24,6 +24,7 @@ class TagsController extends Controller
     public function create()
     {
         //
+        return view('admin.tags.create');
     }
 
     /**
@@ -32,6 +33,8 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         //
+        // $tag = new tags;
+        dd($request->name);
     }
 
     /**
