@@ -35,19 +35,7 @@
 
        
             
-                  {{-- <a
-                  class="btn btn-primary btn-sm"
-                  href="{{ route('admin.cat.edit',['id' => $item->id ]) }}"
-                  role="button"
-                  ><i class="bi bi-pencil-square"></i></a> --}}
               
-                  
-                {{-- <form action="{{ route('admin.cat.destroy',$item->id) }}" method="post">
-                  @method('delete')
-                  @csrf
-
-                  <button type="submit" type="button" onclick="return confirm('Are you sure you want to delete this user?')" class="btn-danger"><i class="bi bi-trash3-fill"></i> </button>
-                </form>    --}}
                
           
                 @foreach ($tags as $item)
