@@ -33,6 +33,7 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         //
+        
          $tag = new tags;
          $tag ->name = $request->name;
          $tag ->save();
