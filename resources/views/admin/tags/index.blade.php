@@ -49,9 +49,31 @@
                   <button type="submit" type="button" onclick="return confirm('Are you sure you want to delete this user?')" class="btn-danger"><i class="bi bi-trash3-fill"></i> </button>
                 </form>    --}}
                
-              </tr>
-           
-             
+          
+                @foreach ($tags as $item)
+                <tr>
+                  <td>{{ $loop->iteration}}</td>
+                  <td>{{ $item ->name }}</td>
+                  <td>
+                    {{-- edit link --}}
+                    <div class="d-flex">
+                    <a
+                    class="btn btn-primary btn-sm mx-2"
+                    href="{{ route('admin.tag.edit',['id' => $item->id ]) }}"
+                    role="button"
+                    ><i class="bi bi-pencil-square"></i></a> 
+  
+                    {{-- delete button --}}
+                    <form action="#" method="post">
+                      @method('delete')
+                      @csrf
+    
+                      <button type="submit" type="button" onclick="return confirm('Are you sure you want to delete this user?')" class="btn-danger"><i class="bi bi-trash3-fill"></i> </button>
+                    </form>
+                  </div>
+                  </td>
+                </tr>
+                @endforeach;
               
             </tbody>
             
