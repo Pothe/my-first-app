@@ -31,13 +31,7 @@
                 <th style="width: 100px">Action</th>
               </tr>
             </thead>
-            <tbody>
-
-       
-            
-              
-               
-          
+            <tbody>   
                 @foreach ($tags as $item)
                 <tr>
                   <td>{{ $loop->iteration}}</td>
