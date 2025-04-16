@@ -24,3 +24,5 @@ Route::PUT('/admin/update/{id}', [CategoryController::class,'update'])->name('ad
 Route::DELETE('/admin/delete/{id}', [CategoryController::class,'destroy'])->name('admin.cat.destroy');
 // tags routes
 Route::get('/admin/tags', [TagsController::class, 'index'])->name('admin.tags');
+Route::get('/admin/tags/create', [TagsController::class, 'create'])->name('admin.tag.create');
+Route::post('/admin/tags/create', [TagsController::class, 'store'])->name('admin.tag.store');
