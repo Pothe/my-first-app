@@ -35,6 +35,19 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'content' => 'required',
+           
+        ]);
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->content;
+       
+        $post->cat_id = $request->cat_id;
+        dd($post);
     }
 
     /**
