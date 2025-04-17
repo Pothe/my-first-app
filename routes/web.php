@@ -28,3 +28,4 @@ Route::get('/admin/tags/create', [TagsController::class, 'create'])->name('admin
 Route::post('/admin/tags/create', [TagsController::class, 'store'])->name('admin.tag.store');
 Route::get('/admin/tags/edit/{id}', [TagsController::class, 'edit'])->name('admin.tag.edit');
 Route::PUT('/admin/tags/update/{id}', [TagsController::class, 'update'])->name('admin.tag.update');
+Route::Delete('/admin/tags/destroy/{id}', [TagsController::class, 'destroy'])->name('admin.tag.destroy');
