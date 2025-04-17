@@ -68,9 +68,9 @@
                   type="checkbox"
                   name="tags[]"
                   value="{{ $item->id }}"
-                  id="tag2"
+                  id="tag{{ $item->id }} "
                 />
-                <label class="form-check-label" for="tag2">{{ $item->name }}</label>
+                <label class="form-check-label" for="tag{{ $item->id }}">{{ $item->name }}</label>
                  
                  
                 </div>
