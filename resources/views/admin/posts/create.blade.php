@@ -50,54 +50,32 @@
                 aria-label="Default select example"
               >
                 <option selected>Select Category</option>
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
+                @foreach ($category as $item)
+                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+               
               </select>
             </div>
             <div class="mb-3">
               <label for="tags" class="form-label">Tag</label>
               <div class="tag-wrapper">
+                
+                @foreach ($tags as $item)
                 <div class="form-check form-check-inline">
+                 
                   <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="tags[]"
-                    value="tag1"
-                    id="tag1"
-                  />
-                  <label class="form-check-label" for="tag1">Tag 1</label>
+                  class="form-check-input"
+                  type="checkbox"
+                  name="tags[]"
+                  value="{{ $item->id }}"
+                  id="tag2"
+                />
+                <label class="form-check-label" for="tag2">{{ $item->name }}</label>
+                 
+                 
                 </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="tags[]"
-                    value="tag2"
-                    id="tag2"
-                  />
-                  <label class="form-check-label" for="tag2">Tag 2</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="tags[]"
-                    value="tag3"
-                    id="tag3"
-                  />
-                  <label class="form-check-label" for="tag3">Tag 3</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="tags[]"
-                    value="tag4"
-                    id="tag4"
-                  />
-                  <label class="form-check-label" for="tag4">Tag 4</label>
-                </div>
+                @endforeach              
+               
               </div>
             </div>
 
