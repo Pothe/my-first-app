@@ -12,7 +12,8 @@
       <!-- Blog entries-->
       <div class="col-lg-12">
         <div class="card p-3">
-          <form method="POST">
+          <form method="POST" action="{{ route('admin.post.store') }}">
+            @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input
@@ -35,18 +36,18 @@
               <label for="thumbnail" class="form-label"
                 >Choose Thumbnail</label
               >
-              <input
+              {{-- <input
                 class="form-control"
                 type="file"
                 id="thumbnail"
                 name="thumbnail"
-              />
+              /> --}}
             </div>
             <div class="mb-3">
               <label for="category" class="form-label">Category</label>
               <select
                 class="form-select"
-                name="category"
+                name="cat_id"
                 aria-label="Default select example"
               >
                 <option selected>Select Category</option>
