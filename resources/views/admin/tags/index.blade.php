@@ -46,7 +46,7 @@
                     ><i class="bi bi-pencil-square"></i></a> 
   
                     {{-- delete button --}}
-                    <form action="#" method="post">
+                    <form action="{{ route('admin.tag.destroy',$item->id) }}" method="post">
                       @method('delete')
                       @csrf
     
