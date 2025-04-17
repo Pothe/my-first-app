@@ -34,7 +34,7 @@ Route::Delete('/admin/tags/destroy/{id}', [TagsController::class, 'destroy'])->n
 // post 
 Route::get('/admin/post', [PostController::class,'index'])->name('admin.posts');
 Route::get('/admin/post/create', [PostController::class, 'create'])->name('admin.post.create');
-// Route::post('/admin/tags/create', [TagsController::class, 'store'])->name('admin.tag.store');
+Route::post('/admin/post/store', [PostController::class, 'store'])->name('admin.post.store');
 // Route::get('/admin/tags/edit/{id}', [TagsController::class, 'edit'])->name('admin.tag.edit');
 // Route::PUT('/admin/tags/update/{id}', [TagsController::class, 'update'])->name('admin.tag.update');
 // Route::Delete('/admin/tags/destroy/{id}', [TagsController::class, 'destroy'])->name('admin.tag.destroy');
